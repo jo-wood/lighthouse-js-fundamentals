@@ -36,7 +36,7 @@ var MOUNTAINS = [
 
   for (var i = 0; i < mountainsArray.length; i++) {
 
-    var newRow = rowOne.parentNode;
+    var newRow = table.insertRow();
 
     var newDataName = document.createElement("td");
       newRow.appendChild(newDataName);
