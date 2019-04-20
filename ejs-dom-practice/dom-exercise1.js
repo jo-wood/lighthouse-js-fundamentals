@@ -16,22 +16,16 @@ var MOUNTAINS = [
   var row = table.appendChild(document.createElement("tr"));
 
   var rowOne = row;
-  var titleOne = rowOne.appendChild(document.createElement("th"));
-  var titleTwo = rowOne.appendChild(document.createElement("th"));
-  var titleThree = rowOne.appendChild(document.createElement("th"));
 
-
-function createTitles(MOUNTAINS) {
-
-  var headOne = document.createTextNode("name");
-    titleOne.appendChild(headOne);
-  var headTwo = document.createTextNode("height");
-    titleTwo.appendChild(headTwo);
-  var headThree = document.createTextNode("place");
-    titleThree.appendChild(headThree);
-}
-
-createTitles();
+  var titleOne = document.createElement("th");
+    titleOne.innerHTML = "name";
+    rowOne.appendChild(titleOne);
+  var titleTwo = document.createElement("th");
+    titleTwo.innerHTML = "height"
+    rowOne.appendChild(titleTwo);
+  var titleThree = document.createElement("th");
+    titleThree.innerHTML = "place";
+    rowOne.appendChild(titleThree);
 
 
   var mountainsArray = [];
@@ -40,27 +34,31 @@ createTitles();
     mountainsArray.push(Object.values(mountObj));
   });
 
+  for (var i = 0; i < mountainsArray.length; i++) {
+
+    var newRow = rowOne.parentNode;
+
+    var newDataName = document.createElement("td");
+      newRow.appendChild(newDataName);
+    var newName = mountainsArray[i][0];
+      newDataName.innerHTML = newName;
+
+    var newDataHeight = document.createElement("td");
+      newRow.appendChild(newDataHeight);
+    var newHeight = mountainsArray[i][1];
+      newDataHeight.innerHTML = newHeight;
+
+    var newDataPlace = document.createElement("td");
+      newRow.appendChild(newDataPlace);
+    var newPlace = mountainsArray[i][2];
+      newDataPlace.innerHTML = newPlace;
+
+
+  }
+
+
 
 console.log(mountainsArray);
 
 
 //     var amountOfRows = mountainsArray.length;
-
-//   for (var j = 0; j < amountOfRows + 1; j++){
-
-//     var nameData = document.createTextNode(mountainsArray[j][0]);
-
-//     row.appendChild(nameData);
-//   }
-
-
-
-//   var namesArray = [];
-//   var heightsArray = [];
-//   var placesArray = [];
-
-//   for (var i = 0; i < mountainsArray.length; i++) {
-//     namesArray.push(mountainsArray[i][0]);
-//     heightsArray.push(mountainsArray[i][1]);
-//     placesArray.push(mountainsArray[i][2]);
-//   }
